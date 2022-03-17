@@ -8,8 +8,7 @@ Data pipeline usando Airflow, Bash, Python e utilitários
 
 O objetivo deste projeto é analisar o arquivo california_housing e exemplificar alguns processos de engenharia de dados, além de realizar a predição dos valores através de regressão. Este projeto visa mostrar como um pipeline simples pode ser criado com ferramentas como Spark, Airflow, bash e Python;
 
-Esta é uma versão de amostra, sem considerar parâmetros de performance, qualidade da persistência, integridade dos tipos de dados, paths relativos, etc.;
-Mais detalhes sobre cada ferramenta, e em como transformar este scratch em “hero” será feito posteriormente!
+Esta é uma versão de amostra, sem considerar parâmetros de performance, qualidade da persistência, integridade dos tipos de dados, paths relativos, etc. Mais detalhes sobre cada ferramenta, e em como transformar este scratch em “hero” será feito posteriormente!
 
 # Definição de workflow:
 
