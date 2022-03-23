@@ -16,8 +16,8 @@ Esta é uma versão de amostra, sem considerar parâmetros de performance, quali
 2. Selecionar os dados que serão usados através de utilitário bash (csvkit);
 3. Usar o PySpark para realizar a análise do arquivo;
 4. Realizar load em MySQL:
-  Obs.: pode-se criar uma prévia do schema da tabela utilizando o comando abaixo do csvkit:
-  csvsql -i mysql california_housing_cleaned.csv > california_housing_ddl.sql
+  - Obs.: pode-se criar uma prévia do schema da tabela utilizando o comando abaixo do csvkit:
+  - csvsql -i mysql california_housing_cleaned.csv > california_housing_ddl.sql
 5. Realizar a regressão do alvo através do scikit;
 6. Orquestrar o fluxo através do Airflow.
 
