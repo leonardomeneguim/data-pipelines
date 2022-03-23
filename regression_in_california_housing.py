@@ -52,6 +52,16 @@ X_test, X_holdout, y_test, y_holdout = train_test_split(X_test, y_test, test_siz
 # create a model
 model = LinearRegression()
 
+# fit scaler
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(X_train)
+
+# transform scaler
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+X_holdout = scaler.transform(X_holdout)
+
 # fit
 model.fit(X_train, y_train)
 print("R2 of Train: ", model.score(X_train, y_train), "\n") # R2, varying between -1 (worst) and 1 (best)
@@ -77,7 +87,7 @@ print("Intercept: ", model.intercept_, "\n")
 for index, column in enumerate(df.drop(['a','MedHouseVal'], axis=1).columns):
     # construct dataframe
     df = pd.DataFrame()
-    df[column] = X_test.iloc[:, index]
+    df[column] = X_test[:, index]
     df['actual'] = y_test
     df['predicted'] = predictions
     df['coeff'] = model.coef_[index]
@@ -89,7 +99,7 @@ for index, column in enumerate(df.drop(['a','MedHouseVal'], axis=1).columns):
     plt.figure(figsize=(20,6))
     plt.scatter(df[column], df['actual'], color='green')
     plt.scatter(df[column], df['predicted'], color='red')
-    plt.plot(df[column], df['coeff'] * df[column] - df['intercept'], color='blue')
+    plt.plot(df[column], df['coeff'] * df[column] + df['intercept'], color='blue')
     plt.xlabel(column)
     plt.show()
 
